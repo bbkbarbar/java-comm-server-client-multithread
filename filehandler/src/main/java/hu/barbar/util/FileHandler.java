@@ -49,7 +49,7 @@ public abstract class FileHandler {
 			return null;
 		}
 		
-		ArrayList<String> lines = new ArrayList<>();
+		ArrayList<String> lines = new ArrayList<String>();
 		String currentLine;
 		BufferedReader br;
 		
@@ -94,7 +94,7 @@ public abstract class FileHandler {
 		PrintWriter  output;
 		
 		if(!fileExists(destinationFile)){
-			ArrayList<String> contentOfNewFile = new ArrayList<>();
+			ArrayList<String> contentOfNewFile = new ArrayList<String>();
 			contentOfNewFile.add(line);
 			return writeToFile(destinationFile, contentOfNewFile);
 		}else{
@@ -128,7 +128,7 @@ public abstract class FileHandler {
 			return null;
 		}
 		
-		HashMap<String, String> result = new HashMap<>();
+		HashMap<String, String> result = new HashMap<String, String>();
 		
 		for(int i=0; i<lines.size(); i++){
 			String[] arr = lines.get(i).split(separator);

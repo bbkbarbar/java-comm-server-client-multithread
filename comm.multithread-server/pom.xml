@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>hu.barbar</groupId>
-  <artifactId>comm.multithread-server</artifactId>
+  <artifactId>comm.server.multithread</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
@@ -35,8 +35,8 @@
     </dependency>
     
     <dependency>
-    	<groupId>hu.barbar.comm</groupId>
-    	<artifactId>util</artifactId>
+    	<groupId>hu.barbar</groupId>
+    	<artifactId>comm.util</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
     

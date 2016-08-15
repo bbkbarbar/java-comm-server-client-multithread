@@ -1,4 +1,4 @@
-package hu.barbar.comm.util.tasker_comm;
+package hu.barbar.comm.util.tasker;
 
 import hu.barbar.comm.util.BaseCommands;
 

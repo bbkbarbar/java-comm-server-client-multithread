@@ -8,7 +8,7 @@ public class ClientThreadHandler {
 	
 	
 	public ClientThreadHandler() {
-		this.clientThreads = new ArrayList<>();
+		this.clientThreads = new ArrayList<ServerThreadForClient>();
 	}
 	
 	public void add(ServerThreadForClient client){
@@ -42,7 +42,7 @@ public class ClientThreadHandler {
 		if(clientThreads == null){
 			return null;
 		}
-		ArrayList<Long> list = new ArrayList<>();
+		ArrayList<Long> list = new ArrayList<Long>();
 		for(int i=0; i<clientThreads.size(); i++){
 			list.add(clientThreads.get(i).getId());
 		}

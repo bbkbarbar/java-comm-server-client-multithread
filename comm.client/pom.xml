@@ -30,8 +30,8 @@
     </dependency>
     
     <dependency>
-    	<groupId>hu.barbar.comm</groupId>
-    	<artifactId>util</artifactId>
+    	<groupId>hu.barbar</groupId>
+    	<artifactId>comm.util</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
     
