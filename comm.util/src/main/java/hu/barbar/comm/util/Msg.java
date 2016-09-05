@@ -22,7 +22,8 @@ public class Msg implements Serializable{
 								PWM_OUTPUT_STATES = 6,
 								RESPONSE_WORKER_INFO = 7,
 								RESPONSE_CPU_TEMP = 8,
-								RGB_COMMAND2 = 9;
+								RGB_COMMAND2 = 9,
+								RESPONSE_IO_STATE = 10;
 		
 		public static String getTypeText(int type){
 			switch (type) {
