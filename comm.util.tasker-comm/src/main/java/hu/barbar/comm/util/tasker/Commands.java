@@ -27,5 +27,7 @@ public class Commands extends BaseCommands {
 	public static final String GET_CPU_TEMP = "get cpu temp";
 
 	public static final String GET_IO_OUTPUT = "get io";
-
+	
+	public static final String GET_STATE_OF = "get state of";
+	
 }
