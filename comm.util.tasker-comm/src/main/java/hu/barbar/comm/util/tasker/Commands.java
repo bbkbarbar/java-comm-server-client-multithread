@@ -32,6 +32,6 @@ public class Commands extends BaseCommands {
 	
 	public static final String SET_STATE_OF = "set state of";
 	
-	public static final String GET_ONLY_HUMIDITY = "set humidity";
+	public static final String GET_ONLY_HUMIDITY = "get only humidity";
 	
 }
