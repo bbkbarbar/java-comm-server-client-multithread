@@ -23,7 +23,8 @@ public class Msg implements Serializable{
 								RESPONSE_WORKER_INFO = 7,
 								RESPONSE_CPU_TEMP = 8,
 								RGB_COMMAND2 = 9,
-								RESPONSE_STATE = 10; 		// To show the state of attached devices e.g.: air pump 1
+								RESPONSE_STATE = 10, 		// To show the state of attached devices e.g.: air pump 1
+								RESPONSE_HUMIDITY = 11;
 		
 		public static String getTypeText(int type){
 			switch (type) {
