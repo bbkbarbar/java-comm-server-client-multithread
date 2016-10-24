@@ -44,6 +44,12 @@ public class Msg implements Serializable{
 				return "Response - worker info";
 			case Types.RESPONSE_CPU_TEMP:
 				return "Response - Cpu temperature";
+			case Types.RGB_COMMAND2:
+				return "RGB_COMMAND2";
+			case RESPONSE_STATE:
+				return "Response state";
+			case RESPONSE_HUMIDITY:
+				return "Responose humidity";
 				
 			default:
 				return "Undefined";
