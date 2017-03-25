@@ -92,16 +92,43 @@ public class Log {
 		FileHandler.appendToFile(logFilePath, line);
 	}
 	
+	public static int getLogLevelFromString(String str){
+		if(str.equalsIgnoreCase("DEBUG")){
+			return 4;
+		}
+		if(str.equalsIgnoreCase("INFO")){
+			return  3;
+		}
+		if(str.equalsIgnoreCase("WARN")){
+			return  2;
+		}
+		if(str.equalsIgnoreCase("ERROR")){
+			return 1;
+		}
+		if(str.equalsIgnoreCase("ALL")){
+			return 9;
+		}
+		if(str.equalsIgnoreCase("WARNING")){
+			return 2;
+		}else{
+			// Default: DEBUG
+			return 4;
+		}
+			
+	}
+	
 	
 	private static void log(int level, String text, int destination){
 		if( !Log.isInitialized ){
 			return;
 		}
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+		
 		if( Log.levelOfOutout   >= level 
 			//&& (destination == Destination.STD_OUT || destination == Destination.ALL) 
 		){
-			showOutput(text);
+			showOutput(sdf.format(new Date()) + " " + text);
 		}
 		if( Log.levelOfFileLogs >= level 
 			//&& (destination == Destination.FILE    || destination == Destination.ALL) 
