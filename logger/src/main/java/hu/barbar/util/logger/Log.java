@@ -56,7 +56,7 @@ public class Log {
 	private static int levelOfFileLogs = Level.UNDEFINED;
 	
 	
-	private static final String DEFAULT_FILENAME = "tasker.log";
+	public static final String DEFAULT_FILENAME = "my.log";
 	
 	private static String logFilePath = null;
 	
@@ -65,17 +65,18 @@ public class Log {
 	
 	/**
 	 * 
-	 * @param outputPath e.g.: Env.getDataFolderPath() + "logs/"
+	 * @param outputPath e.g.: Env.getDataFolderPath()
+	 * @param filename of log file e.g.: "my.log"
 	 * @param levelOfStandardOutput e.g.: Log.Level.DEBUG
 	 * @param levelOfFileLogs e.g.: Log.Level.WARNING
 	 */
-	public static void init(String outputPath, int levelOfStandardOutput, int levelOfFileLogs){
+	public static void init(String outputPath, String filename, int levelOfStandardOutput, int levelOfFileLogs){
 		Log.sdf = new SimpleDateFormat(Log.DATE_TIME_FORMAT);
 		Log.levelOfOutout = levelOfStandardOutput;
 		Log.levelOfFileLogs = levelOfFileLogs;
 		
 		//Output path Env.getDataFolderPath() + "logs/"
-		Log.logFilePath = outputPath + DEFAULT_FILENAME;
+		Log.logFilePath = outputPath + filename;
 		
 		Log.isInitialized = true;
 		
@@ -83,6 +84,18 @@ public class Log {
 			+ "\n\tFile: " + Log.logFilePath + "\n"
 		);
 	}
+	
+	/**
+	 * 
+	 * @param outputPath e.g.: Env.getDataFolderPath() <br>
+	 * 		  Without specified filename it will use default filename (Log.DEFAULT_FILENAME = my.log)
+	 * @param levelOfStandardOutput e.g.: Log.Level.DEBUG
+	 * @param levelOfFileLogs e.g.: Log.Level.WARNING
+	 */
+	/*
+	public static void init(String outputPath, int levelOfStandardOutput, int levelOfFileLogs){
+		init(outputPath, DEFAULT_FILENAME, levelOfStandardOutput, levelOfFileLogs);
+	}/**/
 	
 	private static void showOutput(String s){
 		System.out.println(s);
