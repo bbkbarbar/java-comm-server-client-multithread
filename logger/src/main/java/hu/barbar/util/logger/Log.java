@@ -192,10 +192,11 @@ public class Log {
 		writeToLogFile( sdf.format(new Date()) + " " + Level.getChar(Level.ALL) + ": " + text);
 	}
 
+	/*
 	public static void t(String text) {
 		// TODO Create TRACE loglevel
 		Log.d(text);
-	}
+	}/**/
 
 	/**
 	 * Write text to file independently from setted log levels.
