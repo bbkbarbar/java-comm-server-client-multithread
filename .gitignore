@@ -1,2 +1,17 @@
 comm.client/target/
 comm.client/target/*
+
+comm.multithread-server/target/
+comm.multithread-server/target/*
+
+comm.util/target/
+comm.util/target/*
+
+comm.util.tasker-comm/target/
+comm.util.tasker-comm/target/*
+
+filehandler/target/
+filehandler/target/*
+
+logger/target/
+logger/target/*
