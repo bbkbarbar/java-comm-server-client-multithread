@@ -57,8 +57,8 @@ public abstract class Client extends Thread {
 		this.TIMEOUT_WAIT_WHILE_INITIALIZED_IN_MS = timeOutForIsOK;
 	}
 	
-	public void setLogLevels(String path, int levelOfStandardOutput, int levelOfFileLogs){
-		Log.init(path, levelOfStandardOutput, levelOfFileLogs);
+	public void setLogLevels(String path, String filename, int levelOfStandardOutput, int levelOfFileLogs){
+		Log.init(path, filename, levelOfStandardOutput, levelOfFileLogs);
 	}/**/
 	
 	@Override
