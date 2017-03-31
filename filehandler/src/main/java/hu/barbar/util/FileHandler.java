@@ -278,6 +278,9 @@ public abstract class FileHandler {
 	 * @return
 	 */
 	public static String guaranteePathSeparatorAtEndOf(String folderPath){
+		if(folderPath == null){
+			return null;
+		}
 		if(folderPath.charAt(folderPath.length()-1) != getPathSeparator().charAt(0)){
 			return folderPath + getPathSeparator();
 		}else{

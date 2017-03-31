@@ -10,6 +10,11 @@ import junit.framework.TestSuite;
 public class FileHandlerTest extends TestSuite {
 
 	@Test
+	public void guaranteePathSeparatorAtEndOf_with_null_Test(){
+		assertEquals(null, FileHandler.guaranteePathSeparatorAtEndOf(null));
+	}
+	
+	@Test
 	public void guaranteePathSeparatorAtEndOf_Test(){
 
 		if(FileHandler.runningOnLinux()){
