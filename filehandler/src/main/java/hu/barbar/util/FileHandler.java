@@ -27,6 +27,9 @@ public abstract class FileHandler {
 							RESULT_CAN_NOT_CREATED = -1;
 	
 	
+	protected static boolean runningOnLinuxDeviceCached = false;
+	
+	
 	/**
 	 * Need to override
 	 * @param text
@@ -241,6 +244,45 @@ public abstract class FileHandler {
 		}
 		
 		return true;
+	}
+	
+	
+	/**
+	 * Determine the OS
+	 * @return true if we are on Linux -based system, or false if not (e.g.: Windows)
+	 */
+	public static boolean runningOnLinux(){
+		if(runningOnLinuxDeviceCached){
+			return runningOnLinuxDeviceCached;
+		}
+		
+		if(System.getProperty("os.name").contains("Linux")){
+			runningOnLinuxDeviceCached = true;
+		}else{
+			runningOnLinuxDeviceCached = false;
+		}
+		return runningOnLinuxDeviceCached;
+	}
+	
+	
+	/**
+	 * @return path separator ("/" or "\") according to the used operating system.
+	 */
+	public static String getPathSeparator(){
+		return (runningOnLinux()?("/"):("\\"));
+	}
+	
+	/**
+	 * Add a "\" or a "/" (environment dependently) at the end of folder-path
+	 * @param path
+	 * @return
+	 */
+	public static String guaranteePathSeparatorAtEndOf(String folderPath){
+		if(folderPath.charAt(folderPath.length()-1) != getPathSeparator().charAt(0)){
+			return folderPath + getPathSeparator();
+		}else{
+			return folderPath;
+		}
 	}
 	
 }
