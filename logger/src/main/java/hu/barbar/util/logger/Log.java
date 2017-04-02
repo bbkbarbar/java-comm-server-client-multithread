@@ -14,6 +14,7 @@ public class Log {
 								INFO  = 3,
 								WARN  = 2,
 								ERROR = 1,
+								TRACE = 6,
 								ALL   = 9,
 								WARNING = 2,
 								UNDEFINED = 10;
@@ -30,6 +31,27 @@ public class Log {
 				return "E";
 			case ALL:
 				return "A";
+			case TRACE:
+				return "T";
+			default:
+				return "?";
+			}
+		}
+		
+		public static String getLevelStr(int level){
+			switch (level) {
+			case DEBUG:
+				return "DEBUG";
+			case INFO:
+				return "INFO";
+			case WARN:
+				return "WARN";
+			case ERROR:
+				return "ERROR";
+			case ALL:
+				return "ALL";
+			case TRACE:
+				return "TRACE";
 			default:
 				return "?";
 			}
@@ -136,17 +158,15 @@ public class Log {
 			return;
 		}
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-		
 		if( Log.levelOfOutout   >= level 
 			//&& (destination == Destination.STD_OUT || destination == Destination.ALL) 
 		){
-			showOutput(sdf.format(new Date()) + " " + text);
+			showOutput(text);
 		}
 		if( Log.levelOfFileLogs >= level 
 			//&& (destination == Destination.FILE    || destination == Destination.ALL) 
 		){
-			writeToLogFile( sdf.format(new Date()) + " " + Level.getChar(level) + ": " + text);
+			writeToLogFile( Level.getChar(level) + ": " + text);
 		}
 		
 	}
@@ -192,11 +212,14 @@ public class Log {
 		writeToLogFile( sdf.format(new Date()) + " " + Level.getChar(Level.ALL) + ": " + text);
 	}
 
-	/*
+	
 	public static void t(String text) {
-		// TODO Create TRACE loglevel
-		Log.d(text);
-	}/**/
+		log(Level.TRACE, text, Destination.ALL);
+	}
+	
+	public static void trace(String text) {
+		Log.t(text);
+	}
 
 	/**
 	 * Write text to file independently from setted log levels.
