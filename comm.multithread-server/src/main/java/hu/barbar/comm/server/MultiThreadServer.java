@@ -150,4 +150,9 @@ public abstract class MultiThreadServer extends Thread {
 		}
 	}
 
+
+	public int getPort() {
+		return this.port;
+	}
+
 }
