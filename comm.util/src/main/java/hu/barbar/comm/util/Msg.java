@@ -75,6 +75,10 @@ public class Msg implements Serializable{
 		this.content = text;
 		this.type = type;
 	}
+
+	public static Msg createExitMessage(){
+		return new Msg(BaseCommands.CLIENT_EXIT, Types.COMMAND);
+	}
 	
 	public static Msg createInstance(String line){
 		int resolvedType = Types.UNDEFINED;
